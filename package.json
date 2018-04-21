@@ -1,5 +1,5 @@
 {
-  "name": "Ramda-playground",
+  "name": "ramda-playground",
   "version": "0.1.0",
   "description": "Simple Javascript sandboxed environment.",
   "main": "index.js",

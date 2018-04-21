@@ -24,5 +24,4 @@ Now edit the `index.js` file in the roots, and your code will be executed on eac
 
 ### Ramda and logging
 
-Both ramda is included in this build. No need to install them yourself. Also included is
-colorful logging. The logging system can be included by importing from `lib/log.js`.
+Both Ramda and a logger is included in this build. The logging can be included by importing from `lib/log.js`.
