@@ -157,10 +157,9 @@ const fooReplacer = replaceAllNils('FOO')
 // log('REPLACER', fooReplacer(data))
 
 /*  =========   TASK 9: CREATE GENERIC UPDATER   ========= */
-// like assocPath only better because it works on arrays and objects
-// allow use of string path 'a.b.2'
+// like assocPath only allowing use of string path 'a.b.2'
 
-const updateIn = R.curry((path, val, obj) => 'updated obj or array')
+const setIn = R.curry((path, val, obj) => 'updated obj or array')
 
-// const update = updateIn('musicians.originals.2.name', 'Richard', data)
+// const update = setIn('musicians.originals.2.name', 'Richard', data)
 // log('updateIn', update)
