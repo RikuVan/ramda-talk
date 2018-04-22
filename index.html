@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <style>
+    body {
+      align-items: center;
+      background-color: #111;
+      display: flex;
+      font-family: Helvetica Neue, sans-serif;
+      height: 100vh;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      text-align: center;
+      color: #00caff;
+    }
+
+    h1 {
+      color: inherit;
+      font-weight: 100;
+      font-size: 8em;
+      margin: 0;
+      padding-bottom: 15px;
+    }
+
+    button {
+      background: #111;
+      border-radius: 0px;
+      border: 1px solid #00caff;
+      color: inherit;
+      font-size: 2em;
+      font-weight: 100;
+      line-height: inherit;
+      margin: 0;
+      outline: none;
+      padding: 5px 15px 10px;
+      transition: background .2s;
+    }
+
+    button:hover,
+    button:active,
+    button:disabled {
+      background: #00caff;
+      color: #111;
+    }
+
+    button:active {
+      outline: 2px solid #00caff;
+    }
+
+    button:focus {
+      border: 1px solid #00caff;
+    }
+
+    button+button {
+      margin-left: 3px;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.js"></script>
+
+  <script src="https://unpkg.com/hyperapp"></script>
+
+  <script>
+    window.onload = function () {
+
+      const { h, app } = hyperapp
+
+      const state = {
+        count: 0
+      }
+
+      const countLens = R.lensProp('count')
+
+      const actions = {
+        down: (_) => R.over(countLens, R.dec),
+        up: (_) => R.over(countLens, R.inc),
+        reset: (_) => R.set(countLens, 0)
+      }
+
+      const view = (state, actions) => {
+        return (h('main', {}, [
+          h('h1', {}, R.view(countLens, state)),
+          h('button', { onclick: actions.down }, '-'),
+          h('button', { onclick: actions.up }, '+'),
+          h('button', { onclick: actions.reset }, 'RESET')
+        ]))
+
+      }
+
+      app(state, actions, view, document.body)
+    };
+  </script>
+</head>
+
+<body></body>
+
+</html>
