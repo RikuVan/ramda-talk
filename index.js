@@ -98,6 +98,7 @@ const data = {
 
 /* =========  TASK 1: GET  ========= */
 // get Danko's first instrument
+// see: https://goo.gl/WktouA
 
 const dankosFirstLens = R.identity
 const dankosFirst = R.identity
@@ -105,6 +106,7 @@ const dankosFirst = R.identity
 
 /* =========  TASK 2: SET  ========= */
 // change Danko's first instrument
+// see: https://goo.gl/WktouA
 
 const dankoOnDrums = R.identity
 // log('SET', dankoOnDrums)
@@ -114,25 +116,28 @@ const dankoOnDrums = R.identity
 
 const hyphenatedInstruments = R.identity
 // log('TRANSFORMS', hyphenatedInstrument)
+// see: https://goo.gl/3VeyBa
 
-/* =========  TASK 4: OMIT   ========= */
+/* =========  TASK 4: REMOVE PROPERTY   ========= */
 // remove collaborators
+// https://goo.gl/xgb85b
 
-const membersLens = R.lensProp(['members'])
 const sansCollabs = R.identity
 // log('OMIT', sansCollabs)
 
 /*  =========   TASK 5: INSERT TO LIST  ========= */
 // insert a new name to collaborators list
+// see: https://goo.gl/aYHL8y
 
 const updatedCollaborators = R.identity
 //log('INSERT', updatedCollaborators)
 
 /*  =========   TASK 6: INSERT NEW OBJ  =========  */
 // insert a new property: hangers-on
+// see: https://goo.gl/XAEPvy
 
 const withHangersOn = R.identity
-// log('INSERT OBJ', ithHangersOn)
+// log('INSERT OBJ', hangersOn)
 
 /*  =========   TASK 7: COMPOSE  =========   */
 // compose 5 & 6
