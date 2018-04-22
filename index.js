@@ -158,8 +158,9 @@ const fooReplacer = replaceAllNils('FOO')
 
 /*  =========   TASK 9: CREATE GENERIC UPDATER   ========= */
 // like assocPath only allowing use of string path 'a.b.2'
+// how can you keep it from blowing up if it gets bad path?
 
 const setIn = R.curry((path, val, obj) => 'updated obj or array')
 
-// const update = setIn('musicians.originals.2.name', 'Richard', data)
+// const update = setIn('members.originals.0.name', 'Richard', data)
 // log('updateIn', update)
