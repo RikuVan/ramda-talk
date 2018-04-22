@@ -9,8 +9,9 @@ const R = require('ramda')
   R.adjust
   R.update
   R.path
-  R.pathEq
+  R.pathOr
   R.prop
+  R.propOr
   R.nth
   R.take
   R.head
@@ -143,6 +144,7 @@ const withTransforms = R.identity
 
 /*  =========   TASK 8: CREATE DEFAULTS HELPER  ========= */
 // helper which replaces all nulls and undefineds with a default value
+// see: https://goo.gl/G1BZ38
 
 const _getPaths = (obj, lastPath = [], paths = []) => {
   return paths
@@ -159,6 +161,7 @@ const fooReplacer = replaceAllNils('FOO')
 /*  =========   TASK 9: CREATE GENERIC UPDATER   ========= */
 // like assocPath only allowing use of string path 'a.b.2'
 // how can you keep it from blowing up if it gets bad path?
+// see: https://goo.gl/QezGF7
 
 const setIn = R.curry((path, val, obj) => 'updated obj or array')
 
