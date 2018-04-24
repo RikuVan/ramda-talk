@@ -21,8 +21,20 @@ const R = require('ramda')
   R.pluck
 */
 
-// lenses provide a more generic way to handle all these operations
+// lenses provide a more generic way to handle all these operations and many more
 // A lens combines together a getter and a non-mutating setter
+
+/* ARTICLES ON LENSES
+  - https://www.linkedin.com/pulse/functional-lenses-javascript-vladim%C3%ADr-gorej/
+  - https://calmm-js.github.io/partial.lenses/implementation.html
+*/
+
+/* MORE IMPLEMENTATIONS
+  - https://www.linkedin.com/pulse/functional-lenses-javascript-vladim%C3%ADr-gorej/
+  - https://calmm-js.github.io/partial.lenses/implementation.html
+  - Partial.Lenses
+  - Ramda Adjunct (great way to learn how to make custom lenses, eg. viewEq)
+*/
 
 // Using [Ramda's lens](http://ramdajs.com/docs/#lens)
 const basicLens = R.lens(
@@ -151,16 +163,16 @@ const withTransforms = R.identity
 // helper which replaces all nulls and undefineds with a default value
 // see: https://goo.gl/G1BZ38
 
-const _getPaths = (obj, lastPath = [], paths = []) => {
+const getPaths = (obj, lastPath = [], paths = []) => {
   return paths
 }
 
 const replaceAllNils = fallbackValue => obj => {
-  const paths = _getPaths(obj)
+  const paths = getPaths(obj)
   return '<OBJECT WITH DEFAULTS>'
 }
 
-const fooReplacer = replaceAllNils('FOO')
+const fooReplacer = replaceAllNils('@___FOO___@')
 // log('REPLACER', fooReplacer(data))
 
 /*  =========   TASK 9: CREATE GENERIC UPDATER   ========= */
